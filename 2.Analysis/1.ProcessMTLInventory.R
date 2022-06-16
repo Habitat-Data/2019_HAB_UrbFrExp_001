@@ -1,0 +1,164 @@
+################################################################################
+## 01
+## Process the Montreal Tree Inventory
+################################################################################
+#date: 20210526
+#author: Kyle T. Martins
+
+#Load the relevant libraries
+library(sf)
+library(stringr)
+library(dplyr)
+library(plyr)
+
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+for(i in 1:1){setwd("..")}
+
+####DEFINE DATA PATHS#### 315907
+
+pathTreeData=paste0("C:/Users/eco2urb/Google Drive/",
+                    "4 - Eco2urbDataBase/DataRepo/UrbanTreeData/")
+
+####LOAD THE DATA####
+
+print("Loading Montreal inventory data.")
+
+#Load the most recent version of the Montreal tree database
+mtl_inv=read.csv(paste0("1.Input/arbres-publics.csv"),
+                 fileEncoding="UTF-8")
+head(mtl_inv)
+
+#Load the tree name database
+name_db=read.csv(paste0(pathTreeData, 
+                        "SpeciesNameDatabase/TreeNameDatabase.csv"))
+head(name_db)
+
+#Load the iTree ecosystem service estimations
+itree_es=read.csv(paste0(pathTreeData, 
+                         "iTreeData/iTreeOutputSppxDBH.csv"))
+
+####DATA ANALYSIS####
+
+#How many observations in the original inventory
+nObsStart=dim(mtl_inv)[1]
+
+#Isolate just the relevant columns in the MTL inventory
+mtl_inv=mtl_inv[c("SIGLE","Essence_latin","DHP", "Longitude", "Latitude")]
+
+print(paste0(dim(mtl_inv)[1], " observations in the original MTL database." ))
+
+#Isolate just the relevant columns in the tree name database
+name_db=name_db[c("mtlcode", "itreecode",  "frgen", "enggen")]
+
+#Merge the tree names into the MTL inventory
+summary(mtl_inv$SIGLE %in% name_db$mtlcode)
+name_db=name_db[name_db$mtlcode %in% mtl_inv$SIGLE,]
+name_db=name_db[!duplicated(name_db$mtlcode),]
+mtl_inv=merge(mtl_inv, name_db, by.x="SIGLE", by.y="mtlcode")
+
+print(paste0(dim(mtl_inv)[1], " observations after merging in species names." ))
+
+#Isolate the relevant columns in the iTree service estimate database
+#Correct the formatting error for the polution removal ES estimates
+head(itree_es)
+itree_es=
+itree_es[c("Species.Name", "itreecode", "DBH..cm.", 
+           "Gross.Carbon.Sequestration..kg.yr.",
+           "Avoided.Runoff..m.3.yr.", "Pollution.Removal..g.yr.")]
+names(itree_es)=c("sp_eng", "itreecode", "DHP", "carbonseqkhyr", "runoffm3yr",
+                  "polremgyr")
+itree_es$polremgyr=as.character(itree_es$polremgyr)
+itree_es$polremgyr=as.numeric(as.character(gsub(",", "", itree_es$polremgyr)))
+head(itree_es)
+#Remove japanese larch since duplicated
+itree_es=itree_es[itree_es$sp_eng!="Japanese larch",]
+
+#Remove AAAA observations
+mtl_inv=mtl_inv[mtl_inv$SIGLE!="AAAA",]
+print(paste0(dim(mtl_inv)[1], " observations after removing AAAA." ))
+
+#Merge in iTree data
+
+#Make corrections to the itree codes in the MTL inventory to facilitate the 
+#merge
+mtl_inv=mtl_inv[mtl_inv$itreecode!="" ,]
+head(mtl_inv)
+mtl_inv$itreecode=as.character(mtl_inv$itreecode)
+itree_codes=as.character(unique(mtl_inv$itreecode))
+summary(itree_codes %in% itree_es$itreecode)
+missing_codes=itree_codes[!itree_codes %in% itree_es$itreecode]
+mtl_inv$itreecode[mtl_inv$itreecode %in% 
+                    missing_codes & nchar(mtl_inv$itreecode)>4]=
+  substr(mtl_inv$itreecode[mtl_inv$itreecode %in% 
+                             missing_codes & nchar(mtl_inv$itreecode)>4],1,4)
+itree_codes=as.character(unique(mtl_inv$itreecode))
+summary(itree_codes %in% itree_es$itreecode)
+missing_codes=itree_codes[!itree_codes %in% itree_es$itreecode]
+
+print(paste0(dim(mtl_inv)[1], " observations after correcting iTree codes." ))
+
+#Remove NA DBH values
+mtl_inv=mtl_inv[!is.na(mtl_inv$DHP),]
+
+print(paste0(dim(mtl_inv)[1], " observations after removing NA DBH values." ))
+
+#Round the DBH value to the closest 0.5 cm increment, make the max value 250
+mtl_inv$DHP=round_any(mtl_inv$DHP, 0.5)
+mtl_inv$DHP[mtl_inv$DHP>250]=250
+
+#Add the ES estimates to the tree inventory
+dim(mtl_inv)
+mtl_inv=merge(mtl_inv, itree_es, by=c("itreecode", "DHP"))
+dim(mtl_inv)
+
+#Reorder the columns names
+head(mtl_inv)
+names(mtl_inv)[names(mtl_inv)=="Essence_latin"]="ltnspp"
+names(mtl_inv)[names(mtl_inv) %in% 
+                 c("Latitude", "Longitude")]=c("longi", "latid")
+names(mtl_inv)=tolower(names(mtl_inv))
+names(mtl_inv)[names(mtl_inv) %in% c("carbonseqkhyr", "runoffm3yr", 
+                              "polremgyr")]=c("csqkgyr", "rnfm3yr", "plrgyr")
+mtl_inv=mtl_inv[c("frgen", "enggen", "ltnspp", "dhp",
+                  "csqkgyr", "rnfm3yr", "plrgyr",
+                  "longi", "latid")]
+head(mtl_inv)
+
+print(paste0(dim(mtl_inv)[1], " observations after adding ES estimates." ))
+
+#Update some of the common names in FR and ENG for common species
+mtl_inv$ltnspp=as.character(mtl_inv$ltnspp)
+mtl_inv$frgen=as.character(mtl_inv$frgen)
+mtl_inv$enggen=as.character(mtl_inv$enggen)
+mtl_inv[grepl("Acer saccharinum", 
+                     mtl_inv$ltnspp),]$frgen="Érable argenté"
+mtl_inv[grepl("Acer saccharinum", 
+              mtl_inv$ltnspp),]$enggen="Silver maple"
+mtl_inv[grepl("Acer platanoides", 
+                     mtl_inv$ltnspp),]$frgen="Érable de Norvège"
+mtl_inv[grepl("Acer platanoides", 
+              mtl_inv$ltnspp),]$enggen="Norway maple"
+mtl_inv[grepl("Fraxinus pennsylvanica", 
+              mtl_inv$ltnspp),]$frgen="Frêne de Pennsylvanie"
+mtl_inv[grepl("Fraxinus pennsylvanica", 
+              mtl_inv$ltnspp),]$enggen="Green ash"
+mtl_inv[grepl("Tilia cordata", 
+              mtl_inv$ltnspp),]$frgen="Tilleul à petites feuilles"
+mtl_inv[grepl("Tilia cordata", 
+              mtl_inv$ltnspp),]$enggen="Small-leaved linden"
+names(mtl_inv)=gsub("gen", "spp", names(mtl_inv)) #update column names 
+head(mtl_inv)
+
+#How many observations retained?
+nObsEnd=dim(mtl_inv)[1]
+nObsDropped=nObsStart-nObsEnd
+percKept=round((nObsEnd/nObsStart)*100,2)
+print(paste0("In total, ", nObsDropped, " observations dropped and ", percKept, 
+      "% of ", "the MTL city dataset retained."))
+
+####EXPORT THE DATA####
+
+write.csv(mtl_inv, paste0("3.Output/Temp/mtl_inv_se.csv"), row.names=FALSE)
+
+
+#End of script#

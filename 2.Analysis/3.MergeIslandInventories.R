@@ -136,7 +136,7 @@ isl_inv_nofct %>%
 isl_inv <- rbind(isl_inv_withfct, isl_inv_nofct)
 
 # Round the DBH value to the closest 0.5 cm increment
-isl_inv$DHP=round_any(isl_inv$dhp, 0.5)
+isl_inv$dhp=round_any(isl_inv$dhp, 0.5)
 
 
 ####EXPORT DATA####

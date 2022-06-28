@@ -55,11 +55,11 @@ ville_liees %>%
                   
 ####EXPORT DATA####
 st_write(sect_merged, 
-         paste0(pathOutput, "/sectors_delim.shp"), 
+         paste0(pathOutput, "/Temp/sectors_delim.shp"), 
          append=FALSE)
 
 st_write(ville_merged, 
-         paste0(pathOutput, "/cities_delim.shp"),
+         paste0(pathOutput, "/Temp/cities_delim.shp"),
          append=FALSE)
 
 #End of script#

@@ -115,12 +115,11 @@ print(paste0("Total of ", nObsStart, " observations added, for a total of ",
 isl_inv %>%
   filter(!is.na(longi)) -> isl_inv
 
-# Transform to shp
-myProj = "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"
-isl_inv_shp <- st_as_sf(isl_inv, coords = c("longi", "latid"), crs = myProj)
-
-# Change column name to fit 10 characters
-names(isl_inv_shp)[names(isl_inv_shp) == "ltnspp_simple"] <- "ltnspp_sim"
+# Change plrgyr to kg 
+isl_inv %>%
+  mutate(plrkgyr = plrgyr/1000) %>%
+  dplyr::select(ltnspp, ltnspp_simple, frspp, frgen, engspp, enggen, dhp, 
+                fctgr10, csqkgyr, rnfm3yr, plrgyr, plrkgyr, longi, latid) -> isl_inv
 
 
 ####EXPORT DATA####
@@ -129,10 +128,4 @@ write.csv(isl_inv,
           fileEncoding ="UTF-8",
           row.names = FALSE)
 
-st_write(isl_inv_shp,
-         paste0(pathOutput, "isl_inv_se.shp"), 
-         layer_options = "ENCODING=UTF-8",
-         delete_layer = TRUE)
-
 #End of script
-

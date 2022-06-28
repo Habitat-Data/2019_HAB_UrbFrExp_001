@@ -10,7 +10,7 @@ source("0.SetEnvironment.R")
 
 ####LOAD DATA####
 # Candiac tree inventory
-cand_inv <- st_read(paste0(pathInput, "Arbre_candiac_2021.shp"))
+cand_inv <- read.csv(paste0(pathInput, "Arbre_candiac_2021.csv"))
 # Ecosystem services estimations
 itree_es=read.csv(paste0(pathInput, "Candiac_out_Itree_2018_final.csv"))
 # Tree name database
@@ -25,8 +25,6 @@ print(paste0(nObsStart, " observations in the original Candiac database." ))
 
 #Isolate just the relevant columns in the candiac inventory
 cand_inv %>%
-  cbind(st_coordinates(.)) %>% # get latitude and longitude 
-  data.frame %>% # change to data frame 
   dplyr::select(UUID, ESSENCE, ESSENCE_TY, NOM_LATIN, DHP, X.1, Y.1) %>%
   filter(!ESSENCE %in% c("AAAA", "AUTRE")) %>% # remove fallen log and unknown species
   filter(!is.na(ESSENCE)) %>% # Remove NA 

@@ -41,7 +41,7 @@ rm(tree_inv)
 tree_cities %>%
   dplyr::select(ltnspp_simple, Nom) %>% # is not including cultivars
   group_by(Nom) %>%
-  dplyr::summarise(rich_spec = n_distinct(ltnspp_sim)) -> rich_spec_cities
+  dplyr::summarise(rich_spec = n_distinct(ltnspp_simple)) -> rich_spec_cities
 
 cities <- merge(cities, rich_spec_cities)
 
@@ -49,7 +49,7 @@ cities <- merge(cities, rich_spec_cities)
 tree_sectors %>%
   dplyr::select(ltnspp_simple, secteurs) %>%
   group_by(secteurs) %>%
-  dplyr::summarise(rich_spec = n_distinct(ltnspp_sim)) -> rich_spec_sectors
+  dplyr::summarise(rich_spec = n_distinct(ltnspp_simple)) -> rich_spec_sectors
 
 sectors <- merge(sectors, rich_spec_sectors)
 rm(rich_spec_cities, rich_spec_sectors)
@@ -58,7 +58,7 @@ rm(rich_spec_cities, rich_spec_sectors)
 # Ville 
 tree_cities %>%
   dplyr::select(Nom, fctgr10) %>%
-  filter(fctgr10 != "-") %>%
+  filter(! fctgr10 %in% c("","-")) %>%
   group_by(Nom, fctgr10) %>%
   dplyr::summarise(sum = n()) %>%
   pivot_wider(names_from = "fctgr10", values_from = "sum") %>%

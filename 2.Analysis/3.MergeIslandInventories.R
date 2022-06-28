@@ -121,11 +121,25 @@ isl_inv %>%
   dplyr::select(ltnspp, ltnspp_simple, frspp, frgen, engspp, enggen, dhp, 
                 fctgr10, csqkgyr, rnfm3yr, plrgyr, plrkgyr, longi, latid) -> isl_inv
 
+# Some problems with fctgr column (quick fix)
+unique(isl_inv$fctgr10)
+
+isl_inv_nofct <- isl_inv %>% filter(fctgr10 %in% c("","-"))
+isl_inv_withfct <- isl_inv %>% filter(!fctgr10 %in% c("","-"))
+
+isl_inv_nofct %>% 
+  dplyr::select(-fctgr10) %>%
+  left_join(name_db_temp[,c("latin_simple", "fctgr10")], by=c("ltnspp_simple"="latin_simple")) %>%
+  dplyr::select(ltnspp, ltnspp_simple, frspp, frgen, engspp, enggen, dhp, 
+                fctgr10, csqkgyr, rnfm3yr, plrgyr, plrkgyr, longi, latid) -> isl_inv_nofct
+
+isl_inv <- rbind(isl_inv_withfct, isl_inv_nofct)
+
 
 ####EXPORT DATA####
 write.csv(isl_inv, 
           paste0(pathOutput, "isl_inv_se.csv"), 
-          fileEncoding ="UTF-8",
+          fileEncoding = "UTF-8",
           row.names = FALSE)
 
 #End of script

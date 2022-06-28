@@ -28,10 +28,10 @@ cand_sect %>%
   st_transform(., crs(mtl_sect)) -> cand_sect
 
 mtl_sect %>%
-  mutate(Ville="Montréal") %>%
+  mutate(Ville=ifelse(TYPE == "Arrondissement", "Montréal", NOM)) %>%
   dplyr::select(Ville, secteurs = NOM, geometry) %>%
   rbind(cand_sect) %>%
-  filter(secteurs != "SCT_011") %>% # no tree in this sector
+  filter(!secteurs %in% c("SCT_011", "Dollard-des-Ormeaux")) %>%
   group_by(Ville, secteurs) %>%
   dplyr::summarise(geometry = st_union(geometry)) -> sect_merged
 
@@ -51,15 +51,15 @@ ville_liees %>%
   group_by(Type, Nom) %>%
   dplyr::summarise(geometry = st_union(geometry)) %>%
   rbind(ville_merged) %>% 
-  dplyr::select(Nom != "Dollard-des-Ormeaux")-> ville_merged
+  filter(Nom != "Dollard-des-Ormeaux")-> ville_merged
                   
 ####EXPORT DATA####
 st_write(sect_merged, 
          paste0(pathOutput, "/Temp/sectors_delim.shp"), 
-         append=FALSE)
+         delete_layer = TRUE)
 
 st_write(ville_merged, 
          paste0(pathOutput, "/Temp/cities_delim.shp"),
-         append=FALSE)
+         delete_layer = TRUE)
 
 #End of script#

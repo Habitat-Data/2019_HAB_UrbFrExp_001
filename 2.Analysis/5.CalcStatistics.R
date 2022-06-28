@@ -16,7 +16,7 @@ memory.limit(size=90000)
 ####LOAD DATA####
 sectors <- st_read(paste0(pathOutput, "Temp/sectors_delim.shp"))
 cities <- st_read(paste0(pathOutput, "Temp/cities_delim.shp"))
-tree_inv <- read.csv(paste0(pathOutput, "isl_inv_se.csv"))
+tree_inv <- read.csv(paste0(pathOutput, "isl_inv_se.csv"), encoding="UTF-8")
 
 ####DATA ANALYSIS####
 ## 1. transform csv to shp

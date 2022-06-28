@@ -138,7 +138,7 @@ isl_inv <- rbind(isl_inv_withfct, isl_inv_nofct)
 
 ####EXPORT DATA####
 write.csv(isl_inv, 
-          paste0(pathOutput, "isl_inv_se.csv"), 
+          paste0(pathOutput, "explorateur_inv_se.csv"), 
           fileEncoding = "UTF-8",
           row.names = FALSE)
 

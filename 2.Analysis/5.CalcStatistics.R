@@ -152,5 +152,12 @@ sectors %>%
 # functional diversity and number of tree).
 
 ####EXPORT DATA####
+st_write(cities, 
+         paste0(pathOutput, "cities_info.shp"), 
+         delete_layer = TRUE)
+
+st_write(sectors, 
+         paste0(pathOutput, "sectors_info.shp"), 
+         delete_layer = TRUE)
 
 #End of script#

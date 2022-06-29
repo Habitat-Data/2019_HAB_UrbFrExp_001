@@ -134,30 +134,37 @@ sectors %>%
   mutate(sup_ha = round(as.numeric(st_area(geometry) * 0.0001), digits=0),
          arb_par_ha = nb_arbre/sup_ha) -> sectors
 
-## 4. Last modifications 
+## 4. Reformat tables
 cities %>%
   dplyr::mutate(across(where(is.numeric), ~round(., 1))) %>%
-  dplyr::select(Nom, Type, rich_spec, fct_div, csqkgyr, rnfm3yr, plrkgyr, 
-                nb_arbre, sup_ha, arb_par_ha, geometry)-> cities
+  dplyr::mutate(fctdiv_cat = ifelse(fct_div >=1 & fct_div < 2.6, "Très faible", 
+                                    ifelse(fct_div >=2.6 & fct_div < 5.1, "Faible",
+                                           ifelse(fct_div >=5.1 & fct_div < 6.1, "Intermédiaire niveau 1",
+                                                  ifelse(fct_div >=6.1 & fct_div < 7.1, "Intermédiaire niveau 2",
+                                                         ifelse(fct_div >=7.1 & fct_div < 8.1, "Élevée", "Très élevée")))))) %>%
+  dplyr::select(Nom, Type, rich_spec, fct_div, fctdiv_cat, csqkgyr, rnfm3yr,  
+                plrkgyr, nb_arbre, sup_ha, arb_par_ha, geometry)-> cities
 
 sectors %>%
   dplyr::mutate(across(where(is.numeric), ~round(., 1))) %>%
-  dplyr::select(Ville, secteurs, rich_spec, fct_div, csqkgyr, rnfm3yr, plrkgyr, 
-                nb_arbre, sup_ha, arb_par_ha, geometry) -> sectors
-  
-  
+  dplyr::mutate(fctdiv_cat = ifelse(fct_div >=1 & fct_div < 2.6, "Très faible", 
+                                    ifelse(fct_div >=2.6 & fct_div < 5.1, "Faible",
+                                           ifelse(fct_div >=5.1 & fct_div < 6.1, "Intermédiaire niveau 1",
+                                                  ifelse(fct_div >=6.1 & fct_div < 7.1, "Intermédiaire niveau 2",
+                                                         ifelse(fct_div >=7.1 & fct_div < 8.1, "Élevée", "Très élevée")))))) %>%
+  dplyr::select(Ville, secteurs, rich_spec, fct_div, fctdiv_cat, csqkgyr, rnfm3yr,
+                plrkgyr, nb_arbre, sup_ha, arb_par_ha, geometry) -> sectors
 
-## IMPORTANT !!! I changed some values for Candiac in order to match the 
-# values in candiac report directly in QGIS after that (for species richness, 
-# functional diversity and number of tree).
 
 ####EXPORT DATA####
 st_write(cities, 
          paste0(pathOutput, "cities_info.shp"), 
+         layer_options = "ENCODING=UTF-8", 
          delete_layer = TRUE)
 
 st_write(sectors, 
          paste0(pathOutput, "sectors_info.shp"), 
+         layer_options = "ENCODING=UTF-8", 
          delete_layer = TRUE)
 
 #End of script#

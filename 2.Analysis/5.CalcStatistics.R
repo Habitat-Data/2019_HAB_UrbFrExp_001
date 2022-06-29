@@ -139,8 +139,8 @@ cities %>%
   dplyr::mutate(across(where(is.numeric), ~round(., 1))) %>%
   dplyr::mutate(fctdiv_cat = ifelse(fct_div >=1 & fct_div < 2.6, "Très faible", 
                                     ifelse(fct_div >=2.6 & fct_div < 5.1, "Faible",
-                                           ifelse(fct_div >=5.1 & fct_div < 6.1, "Intermédiaire niveau 1",
-                                                  ifelse(fct_div >=6.1 & fct_div < 7.1, "Intermédiaire niveau 2",
+                                           ifelse(fct_div >=5.1 & fct_div < 6.1, "Intermédiaire niv. 1",
+                                                  ifelse(fct_div >=6.1 & fct_div < 7.1, "Intermédiaire niv. 2",
                                                          ifelse(fct_div >=7.1 & fct_div < 8.1, "Élevée", "Très élevée")))))) %>%
   dplyr::select(Nom, Type, rich_spec, fct_div, fctdiv_cat, csqkgyr, rnfm3yr,  
                 plrkgyr, nb_arbre, sup_ha, arb_par_ha, geometry)-> cities
@@ -149,8 +149,8 @@ sectors %>%
   dplyr::mutate(across(where(is.numeric), ~round(., 1))) %>%
   dplyr::mutate(fctdiv_cat = ifelse(fct_div >=1 & fct_div < 2.6, "Très faible", 
                                     ifelse(fct_div >=2.6 & fct_div < 5.1, "Faible",
-                                           ifelse(fct_div >=5.1 & fct_div < 6.1, "Intermédiaire niveau 1",
-                                                  ifelse(fct_div >=6.1 & fct_div < 7.1, "Intermédiaire niveau 2",
+                                           ifelse(fct_div >=5.1 & fct_div < 6.1, "Intermédiaire niv. 1",
+                                                  ifelse(fct_div >=6.1 & fct_div < 7.1, "Intermédiaire niv. 2",
                                                          ifelse(fct_div >=7.1 & fct_div < 8.1, "Élevée", "Très élevée")))))) %>%
   dplyr::select(Ville, secteurs, rich_spec, fct_div, fctdiv_cat, csqkgyr, rnfm3yr,
                 plrkgyr, nb_arbre, sup_ha, arb_par_ha, geometry) -> sectors

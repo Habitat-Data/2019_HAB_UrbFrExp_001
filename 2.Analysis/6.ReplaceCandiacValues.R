@@ -18,8 +18,8 @@ sect_res <- read.csv(paste0(pathInput, "results_candiac_report_sectors.csv"), fi
 muni_res <- read.csv(paste0(pathInput, "results_candiac_report_muni.csv"), fileEncoding="UTF-8-BOM")
 
 ####DATA ANALYSIS####
-cities[match(muni_res$Nom, cities$Nom), c(3:11)] <- muni_res[,c(3:11)]
-sectors[match(sect_res$secteurs, sectors$secteurs), c(3:5,9:11)] <- sect_res[,c(2:7)]
+cities[match(muni_res$Nom, cities$Nom), c(3:5)] <- muni_res[,c(3:5)]
+sectors[match(sect_res$secteurs, sectors$secteurs), c(3:5)] <- sect_res[,c(2:4)]
 
 
 ####EXPORT DATA####

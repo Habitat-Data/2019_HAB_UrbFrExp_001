@@ -109,6 +109,12 @@ head(mtl_inv)
 
 print(paste0(dim(mtl_inv)[1], " observations after adding ES estimates." ))
 
+# Remove outlyers
+mtl_inv %>% 
+  filter(latid > 45.33 & latid < 45.7026 & longi > -73.937 & longi < -73.477) -> mtl_inv
+
+print(paste0(dim(mtl_inv)[1], " observations after removing outlyers." ))
+
 #How many observations retained?
 nObsEnd=dim(mtl_inv)[1]
 nObsDropped=nObsStart-nObsEnd

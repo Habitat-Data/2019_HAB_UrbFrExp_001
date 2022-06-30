@@ -5,7 +5,7 @@
 #date: 20220621
 #author: Noemie Lacroix-D.
 
-# Replace Candiac values to fit report results
+# Replace Candiac values to fit report results (functional diversity values)
 
 ####SETTING WORK DIRECTORY####
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))

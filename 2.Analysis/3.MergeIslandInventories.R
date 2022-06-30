@@ -138,6 +138,12 @@ isl_inv <- rbind(isl_inv_withfct, isl_inv_nofct)
 # Round the DBH value to the closest 0.5 cm increment
 isl_inv$dhp=round_any(isl_inv$dhp, 0.5)
 
+# Merge functional groups 2A and 2B
+unique(isl_inv$fctgr10)
+isl_inv %>%
+  dplyr::mutate(fctgr10 = ifelse(fctgr10 == "2A", "2AB", 
+                                 ifelse(fctgr10 == "2B", "2AB", fctgr10))) -> isl_inv
+
 
 ####EXPORT DATA####
 write.csv(isl_inv, 

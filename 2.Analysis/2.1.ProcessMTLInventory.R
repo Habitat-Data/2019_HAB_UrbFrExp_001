@@ -15,11 +15,11 @@ mtl_inv=read.csv(paste0(pathInput, "arbres-publics.csv"),
 head(mtl_inv)
 
 #Load the tree name database
-name_db=read.csv(paste0(pathTreeTraits, "Taxonomy/Tree_Name_Database.csv"))
+name_db=read.csv(paste0("G:/Shared drives/Database/TreeTraits/Taxonomy/Tree_Name_Database.csv"))
 head(name_db)
 
 #Load the iTree ecosystem service estimations
-itree_es=read.csv(paste0(pathTreeTraits, "iTreeData/iTreeOutputSppxDBH.csv"))
+itree_es=read.csv(paste0("G:/Shared drives/Database/TreeTraits/iTreeData/iTreeOutputSppxDBH.csv"))
 
 ####DATA ANALYSIS####
 
@@ -33,14 +33,14 @@ mtl_inv=mtl_inv[c("SIGLE", "Essence_latin", "Essence_fr", "DHP", "Longitude",
 print(paste0(dim(mtl_inv)[1], " observations in the original MTL database." ))
 
 #Isolate just the relevant columns in the tree name database
-name_db=name_db[c("mtlcode", "itreecode", "latin_simple", "frgen", "enggen", 
-                  "engsp", "fctgr10")]
+name_db=name_db[c("mtl_code", "itree_code", "acc_latin_simple", "frgen", "enggen", 
+                  "engsp")]
 
 #Merge the tree names into the MTL inventory
-summary(mtl_inv$SIGLE %in% name_db$mtlcode)
-name_db=name_db[name_db$mtlcode %in% mtl_inv$SIGLE,]
-name_db=name_db[!duplicated(name_db$mtlcode),]
-mtl_inv=merge(mtl_inv, name_db, by.x="SIGLE", by.y="mtlcode")
+summary(mtl_inv$SIGLE %in% name_db$mtl_code)
+name_db=name_db[name_db$mtl_code %in% mtl_inv$SIGLE,]
+name_db=name_db[!duplicated(name_db$mtl_code),]
+mtl_inv=merge(mtl_inv, name_db, by.x="SIGLE", by.y="mtl_code")
 
 print(paste0(dim(mtl_inv)[1], " observations after merging in species names." ))
 

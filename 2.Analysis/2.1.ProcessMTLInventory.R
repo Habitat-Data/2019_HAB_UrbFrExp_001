@@ -11,12 +11,14 @@ source("0.SetEnvironment.R")
 ####LOAD THE DATA####
 # Montreal tree database
 mtl_inv <- read.csv(paste0(pathInput, "arbres-publics.csv"), fileEncoding="UTF-8")
-head(mtl_inv)
 
 #Load the tree name database
 name_db <- read.csv(paste0("G:/Shared drives/Database/TreeTraits/Taxonomy/",
                            "Tree_Name_Database.csv"))
-head(name_db)
+
+#Load the functional groups database
+fctgrp <- read.csv2(paste0("G:/Shared drives/Database/TreeTraits/FunctionalDiversity/",
+                           "functionalGroups_simplified.csv"))
 
 #Load the iTree ecosystem service estimations
 itree_es <- read.csv(paste0("G:/Shared drives/Database/TreeTraits/iTreeData/",
@@ -26,7 +28,7 @@ itree_es <- read.csv(paste0("G:/Shared drives/Database/TreeTraits/iTreeData/",
 ####DATA ANALYSIS####
 ## 1. Prep mtl inventory data
 # How many observations in the original inventory ?
-nObsStart <- dim(mtl_inv)[1]
+nObsStart <- nrow(mtl_inv)
 
 # Isolate relevant columns in the MTL inventory
 mtl_inv <- mtl_inv[c("SIGLE", "Essence_latin", "Essence_fr", "DHP", "Longitude", 
@@ -35,14 +37,14 @@ mtl_inv <- mtl_inv[c("SIGLE", "Essence_latin", "Essence_fr", "DHP", "Longitude",
 print(paste0(dim(mtl_inv)[1], " observations in the original MTL database." ))
 
 # Isolate relevant columns in the tree name database
-name_db <- name_db[c("mtl_code", "itree_code", "acc_latin_simple", "frgen", 
+name_db <- name_db[c("mtl_code", "Full_latin", "itree_code", "acc_latin_simple", "frgen", 
                      "enggen", "engsp")]
 
 # Merge the tree names into the MTL inventory
 summary(mtl_inv$SIGLE %in% name_db$mtl_code)
 name_db <- name_db[name_db$mtl_code %in% mtl_inv$SIGLE,]
 name_db <- name_db[!duplicated(name_db$mtl_code),]
-mtl_inv <- merge(mtl_inv, name_db, by.x="SIGLE", by.y="mtl_code")
+mtl_inv <- merge(mtl_inv, name_db, by.x = "SIGLE", by.y = "mtl_code")
 
 # Correct some names
 gltr_codes <- c("GLTRSU", "GLTRST", "GLTRNA", "GLTRRU", "GLTRSH", "GLTRSK", 
@@ -105,23 +107,28 @@ dim(mtl_inv)
 mtl_inv <- merge(mtl_inv, itree_es, by = c("itree_code", "DHP"))
 dim(mtl_inv)
 
+print(paste0(dim(mtl_inv)[1], " observations after adding ES estimates." ))
+
 
 ## 3. Add functional groups
+summary(mtl_inv$Essence_latin %in% fctgrp$Full_latin)
+summary(mtl_inv$Full_latin %in% fctgrp$Full_latin)
 
+mtl_inv <- mtl_inv %>% 
+  left_join(fctgrp[, c("Full_latin", "fctgrp_2022")]) %>%
+  mutate(fctgrp_2022 = ifelse(fctgrp_2022 == "Arbuste", NA, fctgrp_2022))
 
 
 ## 4. Finalize data
 # Reorder the columns names
 names(mtl_inv)
-mtl_inv %>%
+mtl_inv <- mtl_inv %>%
   dplyr::select(ltnspp = Essence_latin, ltnspp_simple = acc_latin_simple, 
                 frspp = Essence_fr, frgen, engspp = engsp, enggen,  dhp = DHP,
-                csqkgyr = carbonseqkhyr, rnfm3yr = runoffm3yr, plrgyr = polremgyr, 
-                longi = Longitude, latid = Latitude) -> mtl_inv
+                fct_grp = fctgrp_2022, csqkgyr = carbonseqkhyr, rnfm3yr = runoffm3yr, 
+                plrgyr = polremgyr, longi = Longitude, latid = Latitude)
 
 head(mtl_inv)
-
-print(paste0(dim(mtl_inv)[1], " observations after adding ES estimates." ))
 
 # Remove outlyers
 mtl_inv  <- mtl_inv %>% 
@@ -130,15 +137,16 @@ mtl_inv  <- mtl_inv %>%
 print(paste0(dim(mtl_inv)[1], " observations after removing outlyers." ))
 
 # How many observations retained?
-nObsEnd=dim(mtl_inv)[1]
-nObsDropped=nObsStart-nObsEnd
-percKept=round((nObsEnd/nObsStart)*100,2)
+nObsEnd <- nrow(mtl_inv)
+nObsDropped <- nObsStart - nObsEnd
+percKept <- round((nObsEnd/nObsStart) * 100, 2)
 print(paste0("In total, ", nObsDropped, " observations dropped and ", percKept, 
       "% of ", "the MTL city dataset retained."))
 
 
 ####EXPORT THE DATA####
-write.csv(mtl_inv, paste0(pathOutput, "Temp/mtl_inv_se.csv"), 
-          row.names=FALSE)
+write.csv(mtl_inv, 
+          paste0(pathOutput, "Temp/mtl_inv_se.csv"), 
+          row.names = FALSE)
 
 #End of script#

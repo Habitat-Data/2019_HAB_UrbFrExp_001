@@ -68,7 +68,7 @@ geodatabaseCode=tolower("2019_HAB_UrbFrExp_001")
 pathAnalyses=paste0("G:/My Drive/Github/",
                     projectCode,"/2.Analysis/")
 
-pathDataRepo = "G:/My Drive/Habitat/Database/"
+pathDataRepo = "G:/Shared drives/Database/"
 
 pathTreeTraits=paste0(pathDataRepo, "TreeTraits/")
 

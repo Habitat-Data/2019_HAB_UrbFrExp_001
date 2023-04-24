@@ -13,16 +13,13 @@ source("0.SetEnvironment.R")
 mtl_inv <- read.csv(paste0(pathInput, "arbres-publics.csv"), fileEncoding="UTF-8")
 
 #Load the tree name database
-name_db <- read.csv(paste0("G:/Shared drives/Database/TreeTraits/Taxonomy/",
-                           "Tree_Name_Database.csv"))
+name_db <- read.csv(paste0(pathTreeTraits, "Taxonomy/Tree_Name_Database.csv"))
 
 #Load the functional groups database
-fctgrp <- read.csv2(paste0("G:/Shared drives/Database/TreeTraits/FunctionalDiversity/",
-                           "functionalGroups_simplified.csv"))
+fctgrp <- read.csv2(paste0(pathTreeTraits, "FunctionalDiversity/functionalGroups_simplified.csv"))
 
 #Load the iTree ecosystem service estimations
-itree_es <- read.csv(paste0("G:/Shared drives/Database/TreeTraits/iTreeData/",
-                            "iTreeOutputSppxDBH.csv"))
+itree_es <- read.csv(paste0(pathTreeTraits, "iTreeData/iTreeOutputSppxDBH.csv"))
 
 
 ####DATA ANALYSIS####

@@ -10,11 +10,13 @@ source("0.SetEnvironment.R")
 
 ####LOAD DATA####
 # Candiac tree inventory
-cand_inv <- read.csv(paste0(pathInput, "Arbre_candiac_2021.csv"))
+cand_inv <- read.csv(paste0(pathInput, "Arbre_candiac_2021.csv"), fileEncoding = "latin1")
 # Ecosystem services estimations
-itree_es=read.csv(paste0(pathInput, "Candiac_out_Itree_2018_final.csv"))
+itree_es <- read.csv(paste0(pathInput, "Candiac_out_Itree_2018_final.csv"))
 # Tree name database
-name_db=read.csv(paste0(pathTreeTraits, "Taxonomy/Tree_Name_Database.csv"))
+name_db <- read.csv(paste0(pathTreeTraits, "Taxonomy/Tree_Name_Database.csv"))
+# Functional groups database
+fctgrp <- read.csv2(paste0(pathTreeTraits, "FunctionalDiversity/functionalGroups_simplified.csv"))
 
 ####DATA ANALYSIS####
 
@@ -123,8 +125,8 @@ print(paste0("In total, ", nObsDropped, " observations dropped and ", percKept,
              "% of ", "the Candiac city dataset retained."))
 
 ####EXPORT THE DATA####
-
-write.csv(cand_inv, paste0(pathOutput, "Temp/cand_inv_se.csv"), 
+write.csv(cand_inv, 
+          paste0(pathOutput, "Temp/cand_inv_se.csv"), 
           row.names=FALSE)
 
 

@@ -11434,7 +11434,7 @@
 "Ulmus x","Ulmus","Orme hybride","Orme","elm spp","Elm",15,NA,5.2,0.2,44.3,-73.5196218718424,45.3839425561462
 "Ulmus pumila","Ulmus pumila","Orme de sibérie","Orme","Siberian elm","Elm",65,"3A",27.9,1.3,263.1,-73.52926368563,45.4000802416298
 "Acer platanoides","Acer platanoides","Érable de norvège","Érable","Norway maple","Maple",62,"2B",27,2,406,-73.524963,45.389585
-"Euonymus alatus","Euonymus alatus","Fusain aile","Euonymus","Winged burningbush","Euonymus",16,"Arbuste",3.8,0.2,39.4,-73.5299354631502,45.3855256446547
+"Euonymus alatus","Euonymus alatus","Fusain aile","Euonymus","Winged burningbush","Euonymus",16,NA,3.8,0.2,39.4,-73.5299354631502,45.3855256446547
 "Syringa reticulata","Syringa reticulata","Lilas japonais","Lilas","Japanese tree lilac","Lilac",9,"3A",1.7,0,5.4,-73.5153236884994,45.3697540463285
 "Larix","Larix","Mélèze","Mélèze","larch spp","Larch",2,NA,0.3,0,2,-73.534285,45.389819
 "Picea pungens","Picea pungens","Épinette du colorado","Épinette","Blue spruce","Spruce",45,"1A",6.4,1.5,297.7,-73.519792,45.402105
@@ -11767,7 +11767,7 @@
 "Gleditsia triacanthos","Gleditsia triacanthos","Févier d'amérique","Févier","Honeylocust","Locust",4,"2A",0.5,0,4.6,-73.481737,45.385244
 "Acer rubrum","Acer rubrum","Érable rouge","Érable","Red maple","Maple",4,"2A",0.5,0,1.8,-73.481680316205,45.385181235711
 "Taxus baccata","Taxus baccata","If commun","If","English yew","Yew",12,NA,1.4,0.1,16.5,-73.533881,45.400374
-"Cotinus coggygria","Cotinus coggygria","Cotinus","Cotinus","Smoke tree","Smoke tree",15,"Arbuste",2.9,0.1,19.7,-73.5225300673705,45.3810386641865
+"Cotinus coggygria","Cotinus coggygria","Cotinus","Cotinus","Smoke tree","Smoke tree",15,NA,2.9,0.1,19.7,-73.5225300673705,45.3810386641865
 "Syringa vulgaris","Syringa vulgaris","Lilas sur tige","Lilas","Common lilac","Lilac",9,"3A",2.5,0.1,11.9,-73.5311726782536,45.3856342622815
 "Catalpa speciosa","Catalpa speciosa","Catalpa de louest","Catalpa","Northern catalpa","Catalpa",37,"2B",6.5,1,211.7,-73.5254651702919,45.3841001319153
 "Quercus palustris","Quercus palustris","Chêne des marais","Chêne","Pin oak","Oak",8,"4A",2.7,0.1,13.6,-73.5041699008809,45.3776034525161
@@ -11835,7 +11835,7 @@
 "Catalpa speciosa","Catalpa speciosa","Catalpa de louest","Catalpa","Northern catalpa","Catalpa",7,"2B",0.8,0.1,10.4,-73.49353,45.384419
 "Taxus","Taxus","If","If","yew spp","Yew",10,NA,2.9,0.1,11.6,-73.5206594919549,45.3798898573971
 "Picea pungens","Picea pungens","Épinette du colorado","Épinette","Blue spruce","Spruce",22,"1A",2.7,0.3,65.3,-73.512654,45.363948
-"Cotinus coggygria","Cotinus coggygria","Cotinus","Cotinus","Smoke tree","Smoke tree",9,"Arbuste",1.5,0,9.1,-73.530987,45.394086
+"Cotinus coggygria","Cotinus coggygria","Cotinus","Cotinus","Smoke tree","Smoke tree",9,NA,1.5,0,9.1,-73.530987,45.394086
 "Fraxinus americana","Fraxinus americana","Frêne d'amérique","Frêne","White ash","Ash",17,"2A",3.8,0.3,70.2,-73.521938,45.379274
 "Magnolia","Magnolia","Magnolia","Magnolia","magnolia spp","Magnolia",12,NA,2.5,0.2,31.5,-73.530407,45.388045
 "Juglans nigra","Juglans nigra","Noyer noire","Noyer","Black walnut","Walnut",7,"4B",0.8,0,7.8,-73.5301384969276,45.3996303201076
@@ -11908,7 +11908,7 @@
 "Acer platanoides","Acer platanoides","Érable de norvège","Érable","Norway maple","Maple",16,"2B",4.9,0.2,36.3,-73.495621,45.386419
 "Celtis occidentalis","Celtis occidentalis","Micocoulier occidental","Micocoulier","Northern hackberry","Hackberry",5,"2A",0.4,0,6.4,-73.512345,45.363551
 "Thuja occidentalis","Thuja occidentalis","Thuya occidental","Cèdre","Northern white cedar","Cedar",40,"1A",5.6,0.8,172.5,-73.5270782581674,45.3891574882445
-"Cotinus coggygria","Cotinus coggygria","Cotinus","Cotinus","Smoke tree","Smoke tree",16,"Arbuste",3.1,0.1,22,-73.5324536930702,45.3923810333388
+"Cotinus coggygria","Cotinus coggygria","Cotinus","Cotinus","Smoke tree","Smoke tree",16,NA,3.1,0.1,22,-73.5324536930702,45.3923810333388
 "Prunus serotina","Prunus serotina","Cerisier noire","Prunier, Cerisier ou Pêcher","Black cherry","Cherry/plum",13,"2B",3.7,0.2,33.1,-73.5248222575751,45.3871707491841
 "Fraxinus pennsylvanica","Fraxinus pennsylvanica","Frêne de pensylvannie","Frêne","Green ash","Ash",25,"2A",0,0,0,-73.527596,45.399711
 "Acer x freemanii","Acer x freemanii","Érable de freeman","Érable","Freeman maple","Maple",6,"3A",2.9,0.1,13.1,-73.514569,45.367747
@@ -12049,7 +12049,7 @@
 "Malus","Malus","Pommier","Pommetier","apple spp","Apple/Crab apple",26,"3A",7.5,0.3,56.9,-73.530069486857,45.3882126211081
 "Populus deltoides","Populus deltoides","Peuplier deltoide","Peuplier","Eastern cottonwood","Poplar",44,"5",17.5,1.6,316.4,-73.511764903682,45.3993327868387
 "Betula populifolia","Betula populifolia","Bouleau gris","Bouleau","Gray birch","Birch",18,"5",3.4,0.2,32.4,-73.5292074459431,45.3909527372431
-"Cotinus coggygria","Cotinus coggygria","Cotinus","Cotinus","Smoke tree","Smoke tree",14,"Arbuste",2.6,0.1,17.6,-73.5247226005742,45.3844489327855
+"Cotinus coggygria","Cotinus coggygria","Cotinus","Cotinus","Smoke tree","Smoke tree",14,NA,2.6,0.1,17.6,-73.5247226005742,45.3844489327855
 "Picea pungens","Picea pungens","Épinette du colorado","Épinette","Blue spruce","Spruce",15,"1A",1.7,0.1,26.4,-73.495003,45.378365
 "Aesculus hippocastanum","Aesculus hippocastanum","Marronnier dinde","Marronnier","Horse chestnut","Buckeye",42,"4B",14,1.5,313.2,-73.520063,45.402455
 "Picea pungens","Picea pungens","Épinette du colorado","Épinette","Blue spruce","Spruce",44,"1A",6.3,1.4,287.5,-73.5273577305954,45.3938483216307
@@ -12140,7 +12140,7 @@
 "Acer rubrum","Acer rubrum","Érable rouge","Érable","Red maple","Maple",3,"2A",0.5,0,2.3,-73.5063258222726,45.3986072125376
 "Acer ginnala","Acer tataricum","Érable de lamur","Érable","Amur maple","Maple",18,"3A",8.6,0.5,96.1,-73.5193692377181,45.4003999151257
 "Acer x freemanii","Acer x freemanii","Érable de freeman","Érable","Freeman maple","Maple",4,"3A",1.7,0,7.1,-73.516297,45.39703
-"Cotinus coggygria","Cotinus coggygria","Cotinus","Cotinus","Smoke tree","Smoke tree",12,"Arbuste",2.1,0.1,13.8,-73.522664129242,45.3807086781583
+"Cotinus coggygria","Cotinus coggygria","Cotinus","Cotinus","Smoke tree","Smoke tree",12,NA,2.1,0.1,13.8,-73.522664129242,45.3807086781583
 "Gymnocladus dioicus","Gymnocladus dioica","Chicot du canada","Chicot","Kentucky coffeetree","Coffeetree",7,"4A",0.4,0.1,14.5,-73.531233,45.400332
 "Picea pungens","Picea pungens","Épinette du colorado","Épinette","Blue spruce","Spruce",35,"1A",4.7,0.9,192,-73.516106,45.382177
 "Picea pungens","Picea pungens","Épinette du colorado","Épinette","Blue spruce","Spruce",27,"1A",3.4,0.5,107.2,-73.5169682806253,45.4040665942168
@@ -12413,7 +12413,7 @@
 "Elaeagnus angustifolia","Elaeagnus angustifolia","Olivier de bohème","Chalef","Russian olive","Silverberry",20,"3B",4.8,0.2,31.2,-73.5192452167712,45.3895546651967
 "Tilia americana","Tilia americana","Tilleul d'amérique","Tilleul","American basswood","Linden",11,"2B",1.2,0.1,23.2,-73.516654,45.404194
 "Populus alba","Populus alba","Peuplier blanc","Peuplier","White poplar","Poplar",20,"5",3.2,0.1,29.3,-73.5054327973768,45.3740735157138
-"Hamamelis virginiana","Hamamelis virginiana","Hamamelis de virginie","Hamamélis","Witch hazel","Witch hazel",6,"Arbuste",0.6,0.1,13.8,-73.495609,45.38581
+"Hamamelis virginiana","Hamamelis virginiana","Hamamelis de virginie","Hamamélis","Witch hazel","Witch hazel",6,NA,0.6,0.1,13.8,-73.495609,45.38581
 "Betula pendula","Betula pendula","Bouleau europeen","Bouleau","European white birch","Birch",21,"5",6.9,0.7,140,-73.5312838784107,45.386929352365
 "Quercus robur","Quercus robur","Chêne pedoncule","Chêne","English oak","Oak",20,"4A",6.5,0.4,84.2,-73.4966059361264,45.3852507322059
 "Morus alba","Morus alba","Murier blanc","Mûrier","White mulberry","Mulberry",8,"3A",0.8,0.1,12.9,-73.5331986862651,45.3990671414143
@@ -12781,7 +12781,7 @@
 "Chamaecyparis nootkatensis","Xanthocyparis nootkatensis","Faux cypres de nootka","Xanthocyparis","Alaska cedar","Xanthocyparis",22,NA,2.9,0.2,50.6,-73.5294401903904,45.382228089364
 "Malus","Malus","Pommier","Pommetier","apple spp","Apple/Crab apple",5,"3A",0.7,0,5.5,-73.525514,45.384551
 "Quercus rubra","Quercus rubra","Chêne rouge","Chêne","Northern red oak","Oak",11,"4A",2,0.2,34,-73.517663,45.377678
-"Cotinus coggygria","Cotinus coggygria","Cotinus","Cotinus","Smoke tree","Smoke tree",9,"Arbuste",1.5,0,9.1,-73.5311480970417,45.3906857794394
+"Cotinus coggygria","Cotinus coggygria","Cotinus","Cotinus","Smoke tree","Smoke tree",9,NA,1.5,0,9.1,-73.5311480970417,45.3906857794394
 "Acer rubrum","Acer rubrum","Érable rouge","Érable","Red maple","Maple",52,"2A",25,1.9,392.7,-73.488793,45.388712
 "Pinus mugo","Pinus mugo","Pin des montagnes","Pin","Swiss mountain pine","Pine",26,"1B",5.7,0.5,110,-73.515898,45.38201
 "Ginkgo biloba","Ginkgo biloba","Ginkgo a quatre ecus","Ginkgo","Ginkgo","Ginkgo",13,"1B",0.6,0.1,29.2,-73.4895966127335,45.385637075599
@@ -13004,7 +13004,7 @@
 "Quercus palustris","Quercus palustris","Chêne des marais","Chêne","Pin oak","Oak",5,"4A",1.7,0,5.9,-73.531812,45.389113
 "Fraxinus pennsylvanica","Fraxinus pennsylvanica","Frêne de pensylvannie","Frêne","Green ash","Ash",54,"2A",7.9,1.1,226.5,-73.52852,45.399453
 "Quercus robur","Quercus robur","Chêne pedoncule","Chêne","English oak","Oak",2,"4A",0,0,0,-73.5261059534542,45.3776650907388
-"Cotinus coggygria","Cotinus coggygria","Cotinus","Cotinus","Smoke tree","Smoke tree",25,"Arbuste",4,0.1,22.3,-73.531781,45.39077
+"Cotinus coggygria","Cotinus coggygria","Cotinus","Cotinus","Smoke tree","Smoke tree",25,NA,4,0.1,22.3,-73.531781,45.39077
 "Populus canadensis","Populus canadensis","Peuplier du canada","Peuplier","cottonwood spp","Poplar",42,"5",13.2,1.4,285.6,-73.530653,45.400216
 "Acer saccharinum","Acer saccharinum","Érable argenté","Érable","Silver maple","Maple",36,"2A",10.7,1,202,-73.516164,45.381693
 "Acer platanoides","Acer platanoides","Érable de norvège","Érable","Norway maple","Maple",8,"2B",2.1,0.1,10.9,-73.4998978159705,45.3852110993415
@@ -13199,7 +13199,7 @@
 "Acer platanoides","Acer platanoides","Érable de norvège","Érable","Norway maple","Maple",12,"2B",2.4,0,10.1,-73.5281003911918,45.3760208622286
 "Malus","Malus","Pommier","Pommetier","apple spp","Apple/Crab apple",25,"3A",5.1,0.1,24.3,-73.5096,45.397305
 "Ulmus americana","Ulmus americana","Orme d'amérique","Orme","American elm","Elm",9,"2B",1.5,0.1,15.5,-73.516948,45.39456
-"Cotinus coggygria","Cotinus coggygria","Cotinus","Cotinus","Smoke tree","Smoke tree",4,"Arbuste",0.5,0,4.5,-73.5235887572488,45.3883258767362
+"Cotinus coggygria","Cotinus coggygria","Cotinus","Cotinus","Smoke tree","Smoke tree",4,NA,0.5,0,4.5,-73.5235887572488,45.3883258767362
 "Acer rubrum","Acer rubrum","Érable rouge","Érable","Red maple","Maple",6,"2A",0.9,0,3.3,-73.521425,45.370384
 "Fraxinus pennsylvanica","Fraxinus pennsylvanica","Frêne de pensylvannie","Frêne","Green ash","Ash",25,"2A",3.3,0.3,61.6,-73.527374,45.399388
 "Prunus virginiana","Prunus virginiana","Cerisier a grappes","Prunier, Cerisier ou Pêcher","Common chokecherry","Cherry/plum",11,"2B",3.8,0.1,21.3,-73.5125435384279,45.3994506947297
@@ -13220,7 +13220,7 @@
 "Acer rubrum","Acer rubrum","Érable rouge","Érable","Red maple","Maple",4,"2A",0.8,0,3.5,-73.536214,45.390597
 "Fraxinus pennsylvanica","Fraxinus pennsylvanica","Frêne de pensylvannie","Frêne","Green ash","Ash",27,"2A",0,0,0,-73.527848,45.399938
 "Acer x freemanii","Acer x freemanii","Érable de freeman","Érable","Freeman maple","Maple",5,"3A",2.3,0,9.8,-73.527315,45.384717
-"Cotinus coggygria","Cotinus coggygria","Cotinus","Cotinus","Smoke tree","Smoke tree",12,"Arbuste",1.5,0,8.6,-73.5196,45.379717
+"Cotinus coggygria","Cotinus coggygria","Cotinus","Cotinus","Smoke tree","Smoke tree",12,NA,1.5,0,8.6,-73.5196,45.379717
 "Acer platanoides","Acer platanoides","Érable de norvège","Érable","Norway maple","Maple",37,"2B",14.3,0.9,180.2,-73.524462907463,45.3933205222034
 "Picea pungens","Picea pungens","Épinette du colorado","Épinette","Blue spruce","Spruce",25,"1A",3.1,0.4,89.1,-73.5162779007247,45.367947875708
 "Acer saccharinum","Acer saccharinum","Érable argenté","Érable","Silver maple","Maple",59,"2A",18.8,2.1,425.5,-73.5214327509014,45.4026905762168
@@ -13370,7 +13370,7 @@
 "Quercus rubra","Quercus rubra","Chêne rouge","Chêne","Northern red oak","Oak",5,"4A",0.7,0,7.3,-73.514996,45.388392
 "Celtis occidentalis","Celtis occidentalis","Micocoulier occidental","Micocoulier","Northern hackberry","Hackberry",7,"2A",0.4,0,5.3,-73.4930630055264,45.3840321341098
 "Syringa reticulata","Syringa reticulata","Lilas japonais","Lilas","Japanese tree lilac","Lilac",17,"3A",5.3,0.1,28.4,-73.5341508054295,45.3862264408828
-"Cotinus coggygria","Cotinus coggygria","Cotinus","Cotinus","Smoke tree","Smoke tree",3,"Arbuste",0.4,0,3.3,-73.520493,45.381117
+"Cotinus coggygria","Cotinus coggygria","Cotinus","Cotinus","Smoke tree","Smoke tree",3,NA,0.4,0,3.3,-73.520493,45.381117
 "Syringa reticulata","Syringa reticulata","Lilas japonais","Lilas","Japanese tree lilac","Lilac",20,"3A",6.5,0.2,38.1,-73.509417,45.397665
 "Picea pungens","Picea pungens","Épinette du colorado","Épinette","Blue spruce","Spruce",20,"1A",2.4,0.3,51.8,-73.516019,45.401687
 "Picea pungens","Picea pungens","Épinette du colorado","Épinette","Blue spruce","Spruce",25,"1A",3.1,0.4,89.1,-73.498948,45.386778
@@ -13589,7 +13589,7 @@
 "Populus deltoides","Populus deltoides","Peuplier deltoide","Peuplier","Eastern cottonwood","Poplar",63,"5",29.7,2.4,491.1,-73.532326,45.389107
 "Elaeagnus angustifolia","Elaeagnus angustifolia","Olivier de bohème","Chalef","Russian olive","Silverberry",10,"3B",1.9,0.1,10.6,-73.5055064774759,45.3742762744829
 "Fraxinus pennsylvanica","Fraxinus pennsylvanica","Frêne de pensylvannie","Frêne","Green ash","Ash",72,"2A",11.1,1.4,286.3,-73.5265754012149,45.3994917772132
-"Cotinus coggygria","Cotinus coggygria","Cotinus","Cotinus","Smoke tree","Smoke tree",13,"Arbuste",2.4,0.1,15.7,-73.529583,45.397565
+"Cotinus coggygria","Cotinus coggygria","Cotinus","Cotinus","Smoke tree","Smoke tree",13,NA,2.4,0.1,15.7,-73.529583,45.397565
 "Acer saccharinum","Acer saccharinum","Érable argenté","Érable","Silver maple","Maple",17,"2A",4.6,0.2,45.3,-73.5187036833148,45.4038516448043
 "Malus","Malus","Pommier","Pommetier","apple spp","Apple/Crab apple",12,"3A",2.5,0.1,16.4,-73.5230741067635,45.3844919228485
 "Acer saccharinum","Acer saccharinum","Érable argenté","Érable","Silver maple","Maple",67,"2A",21.8,2.5,510.3,-73.529575,45.38332
@@ -14069,7 +14069,7 @@
 "Populus deltoides","Populus deltoides","Peuplier deltoide","Peuplier","Eastern cottonwood","Poplar",105,"5",48.1,2.2,446,-73.5173435459125,45.4028475929665
 "Syringa reticulata","Syringa reticulata","Lilas japonais","Lilas","Japanese tree lilac","Lilac",8,"3A",1.5,0,4.7,-73.485716,45.384949
 "Betula alleghaniensis","Betula alleghaniensis","Bouleau jaune","Bouleau","Yellow birch","Birch",3,"2A",0.2,0,2.7,-73.5208397698139,45.3903835272248
-"Cotinus coggygria","Cotinus coggygria","Cotinus","Cotinus","Smoke tree","Smoke tree",22,"Arbuste",3.4,0.1,17.7,-73.528986,45.387434
+"Cotinus coggygria","Cotinus coggygria","Cotinus","Cotinus","Smoke tree","Smoke tree",22,NA,3.4,0.1,17.7,-73.528986,45.387434
 "Salix alba","Salix alba","Saule blanc","Saule","White willow","Willow",112,"5",27.3,2.7,543.1,-73.5288962376623,45.4005967865747
 "Malus","Malus","Pommier","Pommetier","apple spp","Apple/Crab apple",28,"3A",8.3,0.3,64.8,-73.527384,45.398895
 "Picea pungens","Picea pungens","Épinette du colorado","Épinette","Blue spruce","Spruce",9,"1A",0.9,0,9.4,-73.511378,45.394678
@@ -14242,7 +14242,7 @@
 "Fraxinus pennsylvanica","Fraxinus pennsylvanica","Frêne de pensylvannie","Frêne","Green ash","Ash",22,"2A",1.3,0,6.8,-73.528181,45.39939
 "Syringa reticulata","Syringa reticulata","Lilas japonais","Lilas","Japanese tree lilac","Lilac",15,"3A",4.5,0.1,23,-73.5295060790287,45.3851902038913
 "Picea pungens","Picea pungens","Épinette du colorado","Épinette","Blue spruce","Spruce",29,"1A",3.8,0.6,126.8,-73.5296211393983,45.3965790864964
-"Cotinus coggygria","Cotinus coggygria","Cotinus","Cotinus","Smoke tree","Smoke tree",17,"Arbuste",3.4,0.1,24.4,-73.5267575926035,45.3838869129934
+"Cotinus coggygria","Cotinus coggygria","Cotinus","Cotinus","Smoke tree","Smoke tree",17,NA,3.4,0.1,24.4,-73.5267575926035,45.3838869129934
 "Malus","Malus","Pommier","Pommetier","apple spp","Apple/Crab apple",6,"3A",0.9,0,6.8,-73.519015,45.395021
 "Tilia americana","Tilia americana","Tilleul d'amérique","Tilleul","American basswood","Linden",14,"2B",1.7,0.2,37,-73.4966101626624,45.3806858512568
 "Malus","Malus","Pommier","Pommetier","apple spp","Apple/Crab apple",15,"3A",3.4,0.1,22.9,-73.4970574907546,45.3837211277118
@@ -14333,7 +14333,7 @@
 "Betula pendula","Betula pendula","Bouleau europeen","Bouleau","European white birch","Birch",20,"5",4.6,0.3,61.1,-73.5274065074228,45.3936827263509
 "Sorbus aucuparia","Sorbus aucuparia","Sorbier des oiseaux","Sorbier","European mountain ash","Mountain ash",20,"3A",6.9,0.3,54.4,-73.5227686850436,45.39016875587
 "Picea pungens","Picea pungens","Épinette du colorado","Épinette","Blue spruce","Spruce",1,"1A",0,0,1.8,-73.5271798082877,45.3839979005822
-"Cotinus coggygria","Cotinus coggygria","Cotinus","Cotinus","Smoke tree","Smoke tree",15,"Arbuste",2.9,0.1,19.7,-73.5249391523315,45.3934947100625
+"Cotinus coggygria","Cotinus coggygria","Cotinus","Cotinus","Smoke tree","Smoke tree",15,NA,2.9,0.1,19.7,-73.5249391523315,45.3934947100625
 "Picea pungens","Picea pungens","Épinette du colorado","Épinette","Blue spruce","Spruce",20,"1A",2.4,0.3,51.8,-73.5078581617658,45.3709452406369
 "Picea pungens","Picea pungens","Épinette du colorado","Épinette","Blue spruce","Spruce",2,"1A",0.1,0,2.2,-73.5214661757681,45.3893010805954
 "Gleditsia triacanthos","Gleditsia triacanthos","Févier d'amérique","Févier","Honeylocust","Locust",51,"2A",14.9,1.1,232.4,-73.5234240302512,45.4004755888141
@@ -14520,7 +14520,7 @@
 "Gleditsia triacanthos","Gleditsia triacanthos","Févier d'amérique","Févier","Honeylocust","Locust",6,"2A",0.8,0,7.6,-73.493568,45.377956
 "Catalpa speciosa","Catalpa speciosa","Catalpa de louest","Catalpa","Northern catalpa","Catalpa",5,"2B",0.5,0,6.2,-73.482099,45.385412
 "Acer saccharinum","Acer saccharinum","Érable argenté","Érable","Silver maple","Maple",54,"2A",17,1.8,374.5,-73.520607,45.402753
-"Cotinus coggygria","Cotinus coggygria","Cotinus","Cotinus","Smoke tree","Smoke tree",17,"Arbuste",3.4,0.1,24.4,-73.529735,45.380956
+"Cotinus coggygria","Cotinus coggygria","Cotinus","Cotinus","Smoke tree","Smoke tree",17,NA,3.4,0.1,24.4,-73.529735,45.380956
 "Catalpa speciosa","Catalpa speciosa","Catalpa de louest","Catalpa","Northern catalpa","Catalpa",5,"2B",0.5,0,6.2,-73.481998,45.385372
 "Acer saccharum","Acer saccharum","Érable a sucre","Érable","Sugar maple","Maple",11,"2A",1.2,0.1,17,-73.481942,45.38432
 "Fraxinus pennsylvanica","Fraxinus pennsylvanica","Frêne de pensylvannie","Frêne","Green ash","Ash",25,"2A",3.3,0.3,61.6,-73.528005,45.399516
@@ -15000,7 +15000,7 @@
 "Pinus nigra","Pinus nigra","Pin noire","Pin","Austrian pine","Pine",34,"1B",4.6,0.6,125.4,-73.5241234197097,45.4001954263071
 "Syringa vulgaris","Syringa vulgaris","Lilas sur tige","Lilas","Common lilac","Lilac",22,"3A",7.5,0.3,52.1,-73.528697,45.385794
 "Maackia amurensis","Maackia amurensis","Maackie de lamur","Maackie ","Amur maackia","Maackia",3,"3B",0.3,0,2.6,-73.4829822190088,45.3846932784397
-"Cotinus coggygria","Cotinus coggygria","Cotinus","Cotinus","Smoke tree","Smoke tree",14,"Arbuste",2.6,0.1,17.6,-73.5214503685522,45.3892310341013
+"Cotinus coggygria","Cotinus coggygria","Cotinus","Cotinus","Smoke tree","Smoke tree",14,NA,2.6,0.1,17.6,-73.5214503685522,45.3892310341013
 "Picea pungens","Picea pungens","Épinette du colorado","Épinette","Blue spruce","Spruce",42,"1A",5.9,1.3,268.1,-73.528577151282,45.395362862618
 "Pyrus","Pyrus","Poirier","Poirier","pear spp","Pear",3,"3A",0.4,0,3.6,-73.530925513992,45.3910310685294
 "Malus","Malus","Pommier","Pommetier","apple spp","Apple/Crab apple",8,"3A",1.4,0,9.5,-73.524613,45.39061
@@ -15051,7 +15051,7 @@
 "Picea glauca","Picea glauca","Épinette blanche","Épinette","White spruce","Spruce",10,"1A",1,0.1,16.5,-73.525429,45.383908
 "Celtis occidentalis","Celtis occidentalis","Micocoulier occidental","Micocoulier","Northern hackberry","Hackberry",12,"2A",0.6,0.1,14,-73.517921,45.379034
 "Quercus macrocarpa","Quercus macrocarpa","Chêne a gros fruit","Chêne","Bur oak","Oak",40,"4A",5.8,0.9,181.9,-73.5290179953559,45.3857022241879
-"Cotinus coggygria","Cotinus coggygria","Cotinus","Cotinus","Smoke tree","Smoke tree",14,"Arbuste",2.6,0.1,17.6,-73.5205208410548,45.3882195568032
+"Cotinus coggygria","Cotinus coggygria","Cotinus","Cotinus","Smoke tree","Smoke tree",14,NA,2.6,0.1,17.6,-73.5205208410548,45.3882195568032
 "Salix alba","Salix alba","Saule blanc","Saule","White willow","Willow",93,"5",33.3,2.4,492.8,-73.5261520439722,45.3993024202146
 "Gleditsia triacanthos","Gleditsia triacanthos","Févier d'amérique","Févier","Honeylocust","Locust",5,"2A",0.5,0,3,-73.4847071970459,45.3866378051468
 "Quercus robur","Quercus robur","Chêne pedoncule","Chêne","English oak","Oak",5,"4A",1.7,0,6.3,-73.517033,45.396408
@@ -15262,7 +15262,7 @@
 "Acer platanoides","Acer platanoides","Érable de norvège","Érable","Norway maple","Maple",17,"2B",5.3,0.2,40.7,-73.4866865652156,45.3832027609753
 "Magnolia","Magnolia","Magnolia","Magnolia","magnolia spp","Magnolia",14,NA,3.1,0.2,41,-73.5240006334535,45.3788778956535
 "Malus","Malus","Pommier","Pommetier","apple spp","Apple/Crab apple",6,"3A",0.9,0,6.8,-73.5188592664823,45.3948682255659
-"Cotinus coggygria","Cotinus coggygria","Cotinus","Cotinus","Smoke tree","Smoke tree",10,"Arbuste",1.7,0.1,10.6,-73.53358,45.393893
+"Cotinus coggygria","Cotinus coggygria","Cotinus","Cotinus","Smoke tree","Smoke tree",10,NA,1.7,0.1,10.6,-73.53358,45.393893
 "Quercus macrocarpa","Quercus macrocarpa","Chêne a gros fruit","Chêne","Bur oak","Oak",6,"4A",0.4,0,4.6,-73.5061749495887,45.3807247297006
 "Gleditsia triacanthos var. inermis","Gleditsia triacanthos","Érable de norvège","Févier","Honeylocust","Locust",25,"2A",13.1,0.7,144.4,-73.5086680798299,45.3699588984655
 "Ginkgo biloba","Ginkgo biloba","Ginkgo a quatre ecus","Ginkgo","Ginkgo","Ginkgo",14,"1B",0.7,0.2,34.2,-73.4999205137237,45.3854471324538
@@ -15287,7 +15287,7 @@
 "Betula pendula","Betula pendula","Bouleau europeen","Bouleau","European white birch","Birch",23,"5",7.8,0.8,156,-73.5275539900598,45.3811763281815
 "Syringa reticulata","Syringa reticulata","Lilas japonais","Lilas","Japanese tree lilac","Lilac",8,"3A",2.1,0,9.4,-73.532492,45.394172
 "Tilia cordata","Tilia cordata","Tilleul a petites feuilles","Tilleul","Littleleaf linden","Linden",11,"2B",1.6,0.1,19.9,-73.4855137240929,45.3834224769418
-"Cotinus coggygria","Cotinus coggygria","Cotinus","Cotinus","Smoke tree","Smoke tree",12,"Arbuste",2.1,0.1,13.8,-73.5309061884124,45.3814537612194
+"Cotinus coggygria","Cotinus coggygria","Cotinus","Cotinus","Smoke tree","Smoke tree",12,NA,2.1,0.1,13.8,-73.5309061884124,45.3814537612194
 "Picea pungens","Picea pungens","Épinette du colorado","Épinette","Blue spruce","Spruce",20,"1A",2.4,0.3,51.8,-73.4984672896668,45.3868058109462
 "Gleditsia triacanthos","Gleditsia triacanthos","Févier d'amérique","Févier","Honeylocust","Locust",22,"2A",4.4,0.4,73.1,-73.5043748351821,45.379893208725
 "Malus","Malus","Pommier","Pommetier","apple spp","Apple/Crab apple",35,"3A",8.4,0.5,95.7,-73.526149,45.389164
@@ -15464,7 +15464,7 @@
 "Thuja occidentalis","Thuja occidentalis","Thuya occidental","Cèdre","Northern white cedar","Cedar",38,"1A",5.3,0.8,153.4,-73.527606,45.385031
 "Acer ginnala","Acer tataricum","Érable de lamur","Érable","Amur maple","Maple",16,"3A",7.4,0.4,77.2,-73.5189844520621,45.400711031945
 "Fraxinus pennsylvanica","Fraxinus pennsylvanica","Frêne de pensylvannie","Frêne","Green ash","Ash",32,"2A",0,0,0,-73.527554,45.399654
-"Cotinus coggygria","Cotinus coggygria","Cotinus","Cotinus","Smoke tree","Smoke tree",13,"Arbuste",2.4,0.1,15.7,-73.5337,45.39392
+"Cotinus coggygria","Cotinus coggygria","Cotinus","Cotinus","Smoke tree","Smoke tree",13,NA,2.4,0.1,15.7,-73.5337,45.39392
 "Malus","Malus","Pommier","Pommetier","apple spp","Apple/Crab apple",7,"3A",1.2,0,8.1,-73.517777,45.394263
 "Picea pungens","Picea pungens","Épinette du colorado","Épinette","Blue spruce","Spruce",36,"1A",4.9,1,203.2,-73.5293562345973,45.4005740093435
 "Gleditsia triacanthos","Gleditsia triacanthos","Févier d'amérique","Févier","Honeylocust","Locust",8,"2A",1.1,0.1,11.6,-73.5330539684662,45.377773925329
@@ -15991,7 +15991,7 @@
 "Alnus incana","Alnus incana","Frêne","Aulne","Grey alder","Alder",31,"5",1.4,0.5,109.5,-73.5081544796306,45.3755212979269
 "Sorbus aucuparia","Sorbus aucuparia","Sorbier des oiseaux","Sorbier","European mountain ash","Mountain ash",16,"3A",5,0.2,34.2,-73.495638988319,45.3857851290482
 "Picea pungens","Picea pungens","Épinette du colorado","Épinette","Blue spruce","Spruce",65,"1A",10.2,2.1,432.9,-73.5227033427709,45.3999848031669
-"Cotinus coggygria","Cotinus coggygria","Cotinus","Cotinus","Smoke tree","Smoke tree",7,"Arbuste",1.1,0,6.6,-73.5311549457509,45.390610443638
+"Cotinus coggygria","Cotinus coggygria","Cotinus","Cotinus","Smoke tree","Smoke tree",7,NA,1.1,0,6.6,-73.5311549457509,45.390610443638
 "Acer platanoides","Acer platanoides","Érable de norvège","Érable","Norway maple","Maple",6,"2B",1.5,0,7,-73.511695,45.39141
 "Malus","Malus","Pommier","Pommetier","apple spp","Apple/Crab apple",25,"3A",7.1,0.3,53.2,-73.5296172680375,45.3817120193252
 "Quercus robur","Quercus robur","Chêne pedoncule","Chêne","English oak","Oak",11,"4A",3.6,0.1,24.4,-73.485693,45.386946

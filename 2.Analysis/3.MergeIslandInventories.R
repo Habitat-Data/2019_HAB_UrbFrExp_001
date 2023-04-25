@@ -28,22 +28,33 @@ head(isl_inv)
 pjd_inv=read.csv(paste0(pathInput, "JNDRP_InvArbre_UrbFrExp.csv"))
 
 #Load Candiac inventory
-cand_inv <- read.csv(paste0(pathOutput, "Temp/cand_inv_se.csv"))
+cand_inv=read.csv(paste0(pathOutput, "Temp/cand_inv_se.csv"))
 
 #Load the tree name database
 name_db=read.csv(paste0(pathTreeTraits, "Taxonomy/Tree_Name_Database.csv"))
 
+# Functional groups database
+fctgrp=read.csv(paste0(pathTreeTraits, "FunctionalDiversity/functionalGroups_simplified.csv"))
+
+
 ####DATA ANALYSIS####
+# Add functional group to tree name database
+name_db <- name_db %>% 
+  left_join(fctgrp[,c("Full_latin", "fctgrp_2022")]) %>% 
+  mutate(fct_grp = ifelse(fctgrp_2022 == "Arbuste", NA, fctgrp_2022)) %>% 
+  dplyr::select(-fctgrp_2022)
+  
+
 # Only keep relevant columns from name_db table
-name_db %>%
-  dplyr::select(acc_sp, latin_simple, fctgr10) %>%
-  filter(!fctgr10 %in% c("", "-")) %>%
+name_db_temp <- name_db %>%
+  dplyr::select(acc_sp, acc_latin_simple, fct_grp) %>% 
+  filter(!is.na(fct_grp)) %>%
   unique() %>%
-  filter(!latin_simple %in% c("Betula verrucosa", "Crataegus crus-galli var. inermis", 
+  filter(!acc_latin_simple %in% c("Betula verrucosa", "Crataegus crus-galli var. inermis", 
                               "Larix leptolepis", "Magnolia spp", "Magnolia rustica",
                               "Magnolia x soulangiana", "Picea pungens var. glauca",
                               "Salix matsudana", "Ulmus amurensis", "Ulmus x prospectoro",
-                              "Ulmus propinqua", "Ulmus wilsoniana")) -> name_db_temp
+                              "Ulmus propinqua", "Ulmus wilsoniana"))
 
 #For the island inventory, select exclude the municipalities that did not want
 #to be included OR boroughs already in the city of montreal (in mtl_inv)
@@ -57,13 +68,14 @@ isl_inv=isl_inv[isl_inv$source!="PortailDonneesOuvertesMTL"|
 sort(unique(isl_inv$nom_arr))
 
 #only the relevant columns and update the names
-isl_inv %>%
+isl_inv <- isl_inv %>%
   left_join(name_db_temp) %>%
   mutate(frspp = frgen, 
          engspp = enggen) %>% 
-  dplyr::select(ltnspp = acc_sp, ltnspp_simple = latin_simple, frspp, frgen, 
-                engspp, enggen, dhp, fctgr10, csqkgyr = carbonseqkgyr, rnfm3yr = runoffm3yr, 
-                plrgyr = polremgyr, longi = long, latid = lat) -> isl_inv
+  dplyr::select(ltnspp = acc_sp, ltnspp_simple = acc_latin_simple, frspp, frgen, 
+                engspp, enggen, dhp, fct_grp, csqkgyr = carbonseqkgyr, 
+                rnfm3yr = runoffm3yr, plrgyr = polremgyr, longi = long, 
+                latid = lat)
 
 #Update some of the french names in the island inventory file
 isl_inv[grepl("Acer saccharinum", 
@@ -84,12 +96,12 @@ isl_inv[grepl("Tilia cordata",
               isl_inv$ltnspp),]$engspp="Small-leaved linden"
 
 # Reformat pdl inventory a little
-pjd_inv %>% 
+pjd_inv <- pjd_inv %>% 
   dplyr::select(-engspp) %>%
-  left_join(name_db[,c("Full_latin", "latin_simple", "frgen", "enggen", "engsp",
-                       "fctgr10")], by = c("ltnspp" = "Full_latin")) %>%
-  dplyr::select(ltnspp, ltnspp_simple = latin_simple, frspp, frgen, engspp = engsp, 
-                enggen, dhp, fctgr10, csqkgyr, rnfm3yr, plrgyr, longi, latid) -> pjd_inv
+  left_join(name_db[,c("Full_latin", "acc_latin_simple", "frgen", "enggen", "engsp",
+                       "fct_grp")], by = c("ltnspp" = "Full_latin")) %>%
+  dplyr::select(ltnspp, ltnspp_simple = acc_latin_simple, frspp, frgen, engspp = engsp, 
+                enggen, dhp, fct_grp, csqkgyr, rnfm3yr, plrgyr, longi, latid)
 
 #Update some of the french names in the pjd inventory file
 pjd_inv[grepl("Acer saccharinum", 
@@ -111,38 +123,16 @@ remove(pjd_inv)
 print(paste0("Total of ", nObsStart, " observations added, for a total of ", 
              nObsEnd, " observations to be uploaded to the Tree Explorer."))
 
-# Remove NA values for longitude and latitude
-isl_inv %>%
-  filter(!is.na(longi)) -> isl_inv
 
-# Change plrgyr to kg 
-isl_inv %>%
+# Reformat a little
+test <- isl_inv %>%
+  filter(!is.na(longi)) %>%
   mutate(plrkgyr = plrgyr/1000) %>%
   dplyr::select(ltnspp, ltnspp_simple, frspp, frgen, engspp, enggen, dhp, 
-                fctgr10, csqkgyr, rnfm3yr, plrgyr, plrkgyr, longi, latid) -> isl_inv
-
-# Some problems with fctgr column (quick fix)
-unique(isl_inv$fctgr10)
-
-isl_inv_nofct <- isl_inv %>% filter(fctgr10 %in% c("","-"))
-isl_inv_withfct <- isl_inv %>% filter(!fctgr10 %in% c("","-"))
-
-isl_inv_nofct %>% 
-  dplyr::select(-fctgr10) %>%
-  left_join(name_db_temp[,c("latin_simple", "fctgr10")], by=c("ltnspp_simple"="latin_simple")) %>%
-  dplyr::select(ltnspp, ltnspp_simple, frspp, frgen, engspp, enggen, dhp, 
-                fctgr10, csqkgyr, rnfm3yr, plrgyr, plrkgyr, longi, latid) -> isl_inv_nofct
-
-isl_inv <- rbind(isl_inv_withfct, isl_inv_nofct)
+                fct_grp, csqkgyr, rnfm3yr, plrgyr, plrkgyr, longi, latid)
 
 # Round the DBH value to the closest 0.5 cm increment
 isl_inv$dhp=round_any(isl_inv$dhp, 0.5)
-
-# Merge functional groups 2A and 2B
-unique(isl_inv$fctgr10)
-isl_inv %>%
-  dplyr::mutate(fctgr10 = ifelse(fctgr10 == "2A", "2AB", 
-                                 ifelse(fctgr10 == "2B", "2AB", fctgr10))) -> isl_inv
 
 
 ####EXPORT DATA####

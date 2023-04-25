@@ -40,7 +40,8 @@ print(paste0(dim(cand_inv)[1], " observations after removing fallen logs and unk
 # Prep name database
 name_db <- name_db %>%
   dplyr::select(Full_latin, acc_latin_simple, frgen, enggen, engsp) %>%
-  left_join(fctgrp[, c("Full_latin", "fctgrp_2022")]) # add functional groups
+  left_join(fctgrp[, c("Full_latin", "fctgrp_2022")]) %>% # add functional groups
+  mutate(fctgrp_2022 = ifelse(fctgrp_2022 == "Arbuste", NA, fctgrp_2022))
 
 ### 2. Merge the tree names into the candiac inventory
 # See the correspondance between the tree inventory and the name database

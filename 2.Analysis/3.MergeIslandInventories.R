@@ -125,7 +125,7 @@ print(paste0("Total of ", nObsStart, " observations added, for a total of ",
 
 
 # Reformat a little
-test <- isl_inv %>%
+isl_inv <- isl_inv %>%
   filter(!is.na(longi)) %>%
   mutate(plrkgyr = plrgyr/1000) %>%
   dplyr::select(ltnspp, ltnspp_simple, frspp, frgen, engspp, enggen, dhp, 
@@ -138,7 +138,6 @@ isl_inv$dhp=round_any(isl_inv$dhp, 0.5)
 ####EXPORT DATA####
 write.csv(isl_inv, 
           paste0(pathOutput, "explorateur_inv_se.csv"), 
-          fileEncoding = "UTF-8",
           row.names = FALSE)
 
 #End of script
